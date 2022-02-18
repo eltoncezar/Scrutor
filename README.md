@@ -87,3 +87,48 @@ var serviceProvider = collection.BuildServiceProvider();
 // OtherDecorator -> Decorator -> Decorated
 var instance = serviceProvider.GetRequiredService<IDecoratedService>();
 ```
+
+# Documentation
+
+https://andrewlock.net/using-scrutor-to-automatically-register-your-services-with-the-asp-net-core-di-container/
+
+https://andrewlock.net/adding-decorated-classes-to-the-asp.net-core-di-container-using-scrutor/
+
+## Assembly Scanning
+
+1. A selector
+2. A registration strategy
+3. The services (How)
+4. The lifetime
+
+### 1. A selector
+
+#### Specifying the types explicitly
+
+#### Scanning an assembly for types
+
+#### Filtering the classes you find
+
+#### Chaining multiple selectors together
+
+### 2. A registration strategy
+
+- Append
+- Skip
+- Replace(ReplacementBehavior.ServiceType
+- Replace(ReplacementBehavior.ImplementationType)
+- Replace(ReplacementBehavior.All)
+
+### 3. The services
+
+- AsSelf()
+- AsMatchingInterface()
+- AsImplementedInterfaces()
+- AsSelfWithInterfaces()
+- As<>()
+
+### 4. The lifetime
+
+- WithTransientLifetime()
+- WithScopedLifetime()
+- WithSingletonLifetime()
