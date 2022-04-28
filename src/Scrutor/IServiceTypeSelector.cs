@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace Scrutor
 {
@@ -35,6 +34,12 @@ namespace Scrutor
         /// Registers each matching concrete type as all of its implemented interfaces.
         /// </summary>
         ILifetimeSelector AsImplementedInterfaces();
+
+        /// <summary>
+        /// Registers each matching concrete type as all of its implemented interfaces.
+        /// </summary>
+        /// <param name="predicate">A predicate to filter which interfaces to register.</param>
+        ILifetimeSelector AsImplementedInterfaces(Func<Type, bool> predicate);
 
         /// <summary>
         /// Registers each matching concrete type as all of its implemented interfaces, by returning an instance of the main type
